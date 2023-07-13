@@ -75,3 +75,12 @@ JOIN indicators i ON c.CountryCode = i.CountryCode
 WHERE c.ShortName = 'Zimbabwe'
 AND (i.IndicatorName = "Women who believe a husband is justified in beating his wife (any of five reasons) (%)") 
 ORDER BY i."Year"
+
+
+-- How has the percentage of communicable deaths changed over time?
+SELECT c.shortname, i.IndicatorName, i.YEAR, i.Value 
+FROM Country c
+JOIN indicators i ON c.CountryCode = i.CountryCode
+WHERE c.ShortName = 'Zimbabwe'
+AND (i.IndicatorName = "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)") 
+ORDER BY i."Year"
